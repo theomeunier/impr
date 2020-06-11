@@ -1,0 +1,110 @@
+.SLA {
+    border-radius: 10px;
+    background-color: #FFF;
+    width: 69.5%;
+    margin: 50px auto;
+    text-align: justify;
+    padding: 50px;
+}
+.div-menu-SLA {
+    width: 850px;
+    margin: 50px auto;
+    border: 1px solid black;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+}
+.div-menu-SLA-1 {
+    overflow: hidden;
+    border: 50px solid #f1dc4f;
+    background-color: rgba(215, 220, 79, 0.3);
+    height: 100%;
+    color: #000000;
+    width: 750px;
+    text-align: center;
+    padding: 50px;
+    margin: 200px;
+    margin-top: 50px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.image-pre-SLA {
+    width: 500px;
+    text-align: center;
+}
+
+.sous-titre-SLA-4 {
+    margin: 0 auto;
+    text-align: center;
+    color: #f1dc4f;
+}
+
+.sous-titre-SLA-3 {
+    margin: 0 auto;
+    text-align: center;
+    color: #6acacb ;
+}
+
+.sous-titre-SLA-2 {
+    margin: 0 auto;
+    text-align: center;
+    color: #6805b0;
+}
+
+.sous-titre-SLA-1{
+    margin: 0 auto;
+    text-align: center;
+    color: #3e5edf;
+}
+.image-conseil-SLA{
+    width: 100px;
+}
+
+
+.table-SLA-conseil{
+    margin-left: -20px;
+
+}
+.div-menu-SLA table{
+    border-collapse: collapse;
+}
+
+.div-menu-SLA td, th{
+    padding: 10px 60px;
+}
+
+.div-menu-SLA th{
+    font-weight: normal;
+}
+
+.div-menu-SLA a{
+    text-decoration: none;
+}
+
+.p-consiel-SLA {
+    padding: 7.5px 10px;
+    background-color: #999494;
+    border-radius: 10px;
+    border: 1px solid #999494;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 20px;
+    display: block;
+    width: 150px;
+}
+
+.p-consiel-SLA:hover {
+    background-color: #f1dc4f;
+    border-radius: 10px;
+    border:1px solid #f1dc4f;
+    box-shadow: 2px 2px 12px #aaa;
+    color: #000000;
+}
+
+.titre-SLA {
+    font-size: 50px;
+    margin-top: 20px;
+}
+

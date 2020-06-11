@@ -1,0 +1,21 @@
+.div-footer {
+    width: 80%;
+    height: auto;
+
+    margin: 0 auto 20px;
+    background-color: #58a1e5;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_element {
+    width: 33%;
+    padding: 20px;
+}
+
+.img-footer{
+    width: 10%;
+    height: auto;
+}

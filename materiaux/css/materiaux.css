@@ -1,0 +1,144 @@
+.block-home {
+    background-color: #FBFBFB;
+    height: 400px;
+    margin: 20px 0px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px 5px #aaa;
+}
+
+
+#block-PLA {
+    overflow: hidden;
+    border-left: 50px solid #E4007C;
+    height: 100%;
+}
+#block-ABS {
+    overflow: hidden;
+    border-right: 50px solid #04FF08;
+    height: 100%;
+}
+#block-HIPS {
+    overflow: hidden;
+    border-left: 50px solid #F9FF21;
+    height: 100%;
+}
+
+#block-resine{
+    overflow: hidden;
+    border-right: 50px solid #0028FF;
+    height: 100%;
+}
+
+#desc-PLA:hover {
+    background-color: rgba(228,0,127,0.3);
+}
+#desc-resine:hover {
+    background-color: rgba(0,40,255,0.3);
+}
+#desc-HIPS:hover {
+    background-color: rgba(240,255,33,0.3);
+}
+#desc-ABS:hover {
+    background-color: rgba(4,255,8,0.3);
+}
+
+.block-desc1, .block-image2 {
+    float: left;
+}
+
+.block-desc1 h2 {
+    font-size: 80px;
+    font-weight: 400px;
+    margin: 30px 0px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.block-desc2 h2 {
+    font-size: 80px;
+    font-weight: 400px;
+    margin: 30px 0px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.block-desc1 a {
+    padding: 15px 20px;
+    background-color: #555;
+    border-radius: 10px;
+    border: 1px solid #555;
+    box-shadow: 2px 2px 12px #aaa;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    width: 280px;
+}
+.block-desc1 p {
+    text-align: center;
+}
+
+.block-desc2 p {
+    text-align: center;
+}
+
+.block-desc2 a {
+    padding: 15px 20px;
+    background-color: #555;
+    border-radius: 10px;
+    box-shadow: 1px 1px 12px #aaa;
+    border:1px solid #555;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    width: 280px;
+}
+#desc-PLA a:hover {
+    background-color: #E4007f;
+    border-radius: 10px;
+    border:1px solid #E4007f;
+    color: #FFF;
+}
+#desc-resine a:hover {
+    background-color: #0028FF;
+    border-radius: 10px;
+    border:1px solid #0028FF;
+    color: #FFF;
+}
+#desc-ABS a:hover {
+    background-color: #04FF08;
+    border-radius: 10px;
+    border:1px solid #04FF08;
+    color: #000000;
+}
+#desc-HIPS a:hover {
+    background-color: #F9FF21;
+    border-radius: 10px;
+    border:1px solid #F9FF21;
+    color: #000000;
+}
+
+.block-image1, .block-image2 {
+    width: 350px;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+.block-desc2, .block-image1{
+    float: right;
+}
+.block-desc1, .block-desc2{
+    width: 800px;
+    height: 400px;
+}
+.block-home img {
+    width: 350px;
+    height: 400px;
+    margin: center;
+}
+

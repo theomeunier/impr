@@ -1,0 +1,32 @@
+body {
+    font-family: "Century Gothic", calibri, serif;
+    background-image: url("../image/fondflou.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0 auto;
+    padding: 0;
+}
+*{
+    padding: 0;
+    margin: 0 auto;
+}
+
+section {
+    width: auto;
+
+    margin: 10px auto;
+    padding: 20px;
+
+    border-radius: 10px;
+    background-color: #FFF;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+

@@ -1,0 +1,105 @@
+.plastique{
+    border-radius: 10px;
+    background-color: #FFF;
+    width: 69.5%;
+    margin: center;
+    text-align: justify;
+    padding: 50px;
+    margin-left: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.div-menu-plastique {
+    width: 64.5%;
+    margin: center;
+    border: 1px solid black;
+    text-align: center;
+    padding: 50px;
+    margin: 200px;
+    margin-top: 50px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.image-pre-plastique {
+    width: 500px;
+    float: center;
+    margin: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.sous-titre-plastique-2 {
+    margin: center;
+    text-align: center;
+    color: #0fff00;
+}
+
+.sous-titre-plastique-1{
+    margin: center;
+    text-align: center;
+    color: #d00808;
+}
+.image-conseil-plastique{
+    width: 100px;
+}
+
+.table-plastique-conseil{
+    margin-left: -500px;
+    position: absolute;
+}
+.div-menu-plastique table{
+    border-collapse: collapse;
+}
+
+.div-menu-plastique td, th{
+    padding: 10px 60px;
+}
+
+.div-menu-plastique th{
+    font-weight: normal;
+}
+
+.div-menu-plastique a{
+    text-decoration: none;
+}
+.div-menu-plastique-1 {
+    overflow: hidden;
+    border: 50px solid #E4007C;
+    background-color: rgba(228, 0, 127, 0.3);
+    height: 100%
+    color: #000000;
+    width: 750px;
+    text-align: center;
+    padding: 50px;
+    margin: 200px;
+    margin-top: 50px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.p-consiel-plastique {
+    padding: 7.5px 10px;
+    background-color: #999494;
+    border-radius: 10px;
+    border: 1px solid #999494;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    width: 150px;
+}
+
+.p-consiel-plastique:hover {
+    background-color: #e44d26;
+    border-radius: 10px;
+    border:1px solid #e44d26;
+    box-shadow: 2px 2px 12px #aaa;
+}
+.titre-plastique {
+    font-size: 50px;
+    margin-top: 20px;
+}
