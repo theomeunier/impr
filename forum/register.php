@@ -1,5 +1,18 @@
 <?php include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php"; ?>
-<?php include "/forum/fonction.php"; ?>
+<?php include "{$_SERVER['DOCUMENT_ROOT']}/forum/fonction.php" ?>
+<?php
+
+try {
+    $pdo = new PDO('mysql:dbname=forum;host=localhost','isox', 'egJZt7kmpjMs8WrN');
+    $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+}
+
+catch (Exception $e)
+{
+    die('Erreur : ' . $e->getMessage());
+}
+?>
 
 
 <!DOCTYPE html>
@@ -14,7 +27,6 @@
 </header>
 <section>
     <h1> S'inscrire</h1>
-
     <form action="" method="POST">
         <div class="forum-group">
             <label for="">Pseudo</label>
@@ -71,7 +83,6 @@
 
         // conexion à la machine
         if (empty($errors)){
-            require_once '/forum/db.php';
             $req = $pdo-> prepare('INSERT INTO users SET username = ?, password = ?, email = ?');
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);// criptage mode de passe
             $req-> execute([$_POST ['username'], $password, $_POST['email']]);
@@ -79,7 +90,6 @@
         }
     }
     debug($errors);
-
     ?>
 </section>
 <footer>

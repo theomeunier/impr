@@ -9,6 +9,3 @@ function print_header() {
 function print_footer() {
     include "{$_SERVER['DOCUMENT_ROOT']}/views/footer.php";
 }
-function debug($variable){
-    echo '<pre>' . print_r($variable, true) . '</pre>';
-}
