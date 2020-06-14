@@ -1,18 +1,5 @@
 <?php include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php"; ?>
 <?php include "{$_SERVER['DOCUMENT_ROOT']}/forum/fonction.php" ?>
-<?php
-
-try {
-    $pdo = new PDO('mysql:dbname=forum;host=localhost','isox', 'egJZt7kmpjMs8WrN');
-    $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-}
-
-catch (Exception $e)
-{
-    die('Erreur : ' . $e->getMessage());
-}
-?>
 
 
 <!DOCTYPE html>
@@ -26,7 +13,22 @@ catch (Exception $e)
     <?php print_header() ?>
 </header>
 <section>
+
     <h1> S'inscrire</h1>
+
+    <?php  if (!empty($errors)): ?> // message de vigilance
+        <div class="alert alert-danger"><
+            <p>Vous n'avez pas rempli le formulaire correctement</p>
+            <ul>
+                <?php foreach($errors as $error): ?>
+                    <li>
+                        <?= $errors; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
     <form action="" method="POST">
         <div class="forum-group">
             <label for="">Pseudo</label>
@@ -51,12 +53,13 @@ catch (Exception $e)
     // exigence pour champs demandées
     if (!empty($_POST)){
         $errors = array();
+        require_once 'db.php';
 
         if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
             $errors['username'] = "Votre pseudo n'est pas valide (alphanumérique)";
         }
         else{ // voir si la basse de donner à déjà ce nom d'utilisateur
-            $req = $pdo -> prepare('SELECT id FROM users WHERE username = ?');
+            $req = $pdo->prepare('SELECT id FROM users WHERE username = ?');
             $req-> execute([$_POST['username']]);
             $user = $req ->fetch();
 
@@ -69,8 +72,8 @@ catch (Exception $e)
             $errors['email'] = "votre email n'est pas valide";
         }
         else{ // voir si la basse de donnée a déjà l'email
-            $req = $pdo -> prepare('SELECT id FROM users WHERE mail = ?');
-            $req-> execute([$_POST['mail']]);
+            $req = $pdo -> prepare('SELECT id FROM users WHERE email = ?');
+            $req-> execute([$_POST['email']]);
             $user = $req ->fetch();
 
             if ($user){
@@ -83,13 +86,20 @@ catch (Exception $e)
 
         // conexion à la machine
         if (empty($errors)){
-            $req = $pdo-> prepare('INSERT INTO users SET username = ?, password = ?, email = ?');
+            $req = $pdo-> prepare('INSERT INTO users SET username = ?, password = ?, email = ?, 
+confirmation_token = ?');
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);// criptage mode de passe
-            $req-> execute([$_POST ['username'], $password, $_POST['email']]);
-            die('Notre compte a bien été crée');
+            $token = str_random(60);
+            debug($token);
+            $req-> execute([$_POST ['username'], $password, $_POST['email'], $token ]);
+            $user_id = $pdo->lastInsertId();
+            mail ($_POST['email'], 'confirmation de votre compte', "Afin de valider votre compte merci de cliquer sur ce liens\n\nhttp://88.198.243.216/forum/confirme.php?id=$user_id$token=$token");
+            header('location: login.php');
+            exit();
         }
+       debug($errors);
     }
-    debug($errors);
+
     ?>
 </section>
 <footer>
