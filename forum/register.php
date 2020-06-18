@@ -93,7 +93,7 @@ confirmation_token = ?');
             debug($token);
             $req-> execute([$_POST ['username'], $password, $_POST['email'], $token ]);
             $user_id = $pdo->lastInsertId();
-            mail ($_POST['email'], 'confirmation de votre compte', "Afin de valider votre compte merci de cliquer sur ce liens\n\nhttp://88.198.243.216/forum/confirme.php?id=$user_id$token=$token");
+            mail ($_POST['email'], 'confirmation de votre compte', "Afin de valider votre compte merci de cliquer sur ce liens\n\nhttp://88.198.243.216/forum/confirme.php?id=$user_id&token=$token");
             header('location: login.php');
             exit();
         }
