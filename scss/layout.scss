@@ -1,0 +1,69 @@
+$breakpoint-laptop: 1281px;
+$breakpoint-small-screen: 961px;
+$breakpoint-tablet: 769px;
+$breakpoint-phone: 481px;
+
+body {
+  font-family: "Century Gothic", calibri, serif;
+  background-image: url("../image/fondflou.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  padding: 0;
+}
+*{
+  padding: 0;
+  margin: 0 auto;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#main-logo {
+  width: 20%;
+  height: auto;
+
+  margin: 25px auto;
+}
+
+.content_wrapper {
+  background-color: #FFFFFF;
+
+  margin: 2em 0;
+
+  width: auto;
+  height: auto;
+
+  padding: 1em 8%;
+
+  border-radius: 10px;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #wrapper {
+    width: 100%;
+  }
+
+  .content_wrapper {
+    margin: 0 0;
+    padding: 1em 2.5%;
+  }
+
+  body {
+    background-image: none;
+  }
+}
+

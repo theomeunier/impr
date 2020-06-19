@@ -2,17 +2,18 @@
 include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
 ?>
 <!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>l'imprimeur</title>
     <?php print_head() ?>
 </head>
 <body>
+<div id="wrapper">
 <header>
     <?php print_header() ?>
 </header>
 </body>
-<section>
+<section class="content_wrapper">
     <h1 class="title"> Bienvenue sur L'imprimeur </h1>
     <p class="text">
         Ce site vous propose des aides sur le monde de la 3D<br><br>
@@ -29,4 +30,5 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
 <footer>
     <?php print_footer(); ?>
 </footer>
+</div
 </html>
