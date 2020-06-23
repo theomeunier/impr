@@ -11,8 +11,9 @@ var_dump($user);
 
 if ($user && $user -> confirmation_token == $token){
     session_start();
-    $pdo->prepare('UPDATE users SET confirmation_token = NULL , confirmed_at = NOW() WHERE id = ?') ->execute([$user_id]);
-    $_SESSION['auth'] = $user;
+     $req = $pdo->prepare('UPDATE users SET confirmation_token = NULL , confirmed_at = NOW() WHERE id = ?');
+     $req ->execute([$user_id]);
+     $_SESSION['auth'] = $user;
     header('location : account.php');
     die('ok');
 }

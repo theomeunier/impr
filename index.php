@@ -14,7 +14,7 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
 </header>
 </body>
 <section class="content_wrapper">
-    <h1 class="title"> Bienvenue sur L'imprimeur </h1>
+    <h1 class="title"> Bienvenue sur L'imprimeur</h1>
     <p class="text">
         Ce site vous propose des aides sur le monde de la 3D<br><br>
         Ainsi vous pouvez trouver les différentes machines pour la 3D, les différentes matières qui vont à cela.

@@ -12,7 +12,8 @@
 <header>
     <?php print_header() ?>
 </header>
-<section>
+<div id="wrapper">
+<section class="content_wrapper">
 
     <h1> S'inscrire</h1>
 
@@ -105,5 +106,6 @@ confirmation_token = ?');
 <footer>
     <?php print_footer() ?>
 </footer>
+</div>
 </body>
 </html>
