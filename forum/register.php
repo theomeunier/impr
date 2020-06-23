@@ -23,7 +23,7 @@
             <ul>
                 <?php foreach($errors as $error): ?>
                     <li>
-                        <?= $errors; ?>
+                        <?php echo $error; ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -89,7 +89,7 @@
         if (empty($errors)){
             $req = $pdo-> prepare('INSERT INTO users SET username = ?, password = ?, email = ?, 
 confirmation_token = ?');
-            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);// criptage mode de passe
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);// chiffrement du mot de passe
             $token = str_random(60);
             debug($token);
             $req-> execute([$_POST ['username'], $password, $_POST['email'], $token ]);
@@ -98,7 +98,7 @@ confirmation_token = ?');
             header('location: login.php');
             exit();
         }
-       debug($errors);
+       var_dump($errors);
     }
 
     ?>
