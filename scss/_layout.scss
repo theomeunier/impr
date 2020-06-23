@@ -1,6 +1,6 @@
 body {
   font-family: Calibri, Helvetica, arial, sans-serif;
-  background-image: url("/image/fondflou.png");
+  background-image: url("/image/fondflou.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -55,4 +55,17 @@ header {
   body {
     background-image: none;
   }
+}
+
+.image-menu {
+  width: 23px;
+  height: 50%;
+  margin: 16px 15px 0 25px;
+}
+.image-header {
+  width: 5%;
+  max-width: 5%;
+  height: auto;
+  margin-left: 10%;
+
 }

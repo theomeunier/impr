@@ -5,13 +5,17 @@
   "main": "index.js",
   "dependencies": {
     "css": "^2.2.4",
-    "node-sass": "^4.14.1",
     "sass": "^1.26.9",
     "scss": "^0.2.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1"
+  },
   "scripts": {
-    "scss": "node-sass --watch scss -o css"
+    "scss": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss -o css",
+    "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output css/style.min.css css/style.css",
+    "process-styles": "npm run scss && npm run css-minify"
   },
   "repository": {
     "type": "git",

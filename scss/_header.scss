@@ -2,10 +2,10 @@
   width: 100%;
   height: auto;
 
-  background-color: #6ab04c;
+  background-color: #58a1e5;
   position: sticky;
 
-  border-radius: 2px;
+  border-radius: 10px;
 
   ul {
     list-style-type: none;
@@ -19,7 +19,7 @@
       text-align: center;
 
       a {
-        color: white;
+        color: black;
 
         display: block;
         padding: 1em 0;
@@ -28,7 +28,7 @@
         font-weight: bold;
 
         &:hover {
-          background-color: #559c4f;
+          background-color: #58a1e5;
         }
       }
     }
@@ -40,7 +40,7 @@
     margin: 0;
     z-index: 1000;
 
-    background-color: #9ccea6;
+    background-color: #0070bb;
     position: absolute;
 
     flex-flow: column wrap;
