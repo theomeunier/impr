@@ -23,7 +23,7 @@
         </li> 
         <li class="menu"><a href="/stl">STL</a>
         </li>
-        <li class="menu"><a href="/forum">forum</a>
+        <li class="menu"><a href="/index.php">forum</a>
         </li>
     </ul>
 </nav>
