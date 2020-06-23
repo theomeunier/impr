@@ -1,0 +1,26 @@
+{
+  "name": "imprimeur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "css": "^2.2.4",
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.9",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theomeunier/impr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theomeunier/impr/issues"
+  },
+  "homepage": "https://github.com/theomeunier/impr#readme"
+}
