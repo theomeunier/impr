@@ -29,7 +29,5 @@ function mail($subject, array $from , array $to, $body) {
         ->setBody($body)
     ;
 // Send the message
-    $result = $mailer->send($message);
-
-    return $result;
+    return $mailer -> send($message);
 }
