@@ -5,12 +5,11 @@ function str_random($length){
     $alphabet="0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
      return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
 }
-function mail()
-{
+function mail() {
     // Create the Transport
-    $transport = (new Swift_SmtpTransport('smtp.example.org', 25))
-        ->setUsername('your username')
-        ->setPassword('your password')
+    $transport = (new Swift_SmtpTransport('in-v3.mailjet.com', 587 ))
+        ->setUsername(' 79fafba77e9118cb2961537bef2b2c27 ')
+        ->setPassword(' 2ab06fe6a9404acda6567a480afdf773 ')
     ;
 
 // Create the Mailer using your created Transport
@@ -27,4 +26,4 @@ function mail()
     $result = $mailer->send($message);
 
     return $result;
-}};
+}
