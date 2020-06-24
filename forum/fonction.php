@@ -8,8 +8,8 @@ function str_random($length){
 function mail() {
     // Create the Transport
     $transport = (new Swift_SmtpTransport('in-v3.mailjet.com', 587 ))
-        ->setUsername(' 79fafba77e9118cb2961537bef2b2c27 ')
-        ->setPassword(' 2ab06fe6a9404acda6567a480afdf773 ')
+        ->setUsername('79fafba77e9118cb2961537bef2b2c27')
+        ->setPassword('2ab06fe6a9404acda6567a480afdf773')
     ;
 
 // Create the Mailer using your created Transport
