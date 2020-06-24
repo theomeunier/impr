@@ -13,7 +13,7 @@ function str_random($length){
  * @param $body
  * @return int
  */
-function mail($subject, array $from , array $to, $body) {
+function sendMail($subject, array $from , array $to, $body) {
     // Create the Transport
     $transport = (new Swift_SmtpTransport('in-v3.mailjet.com', 587 ))
         ->setUsername('79fafba77e9118cb2961537bef2b2c27')
