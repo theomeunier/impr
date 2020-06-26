@@ -1,15 +1,13 @@
-<?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
-?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/methods/display.php"; ?>
 <!DOCTYPE html>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>l'imprimeur</title>
-    <?php print_head() ?>
+    <?php print_head(); ?>
 </head>
 <body>
 <div id="wrapper">
-    <?php print_header() ?>
+    <?php print_header(); ?>
 </body>
 <section class="content_wrapper">
     <h1 class="title"> Bienvenue sur L'imprimeur</h1>
