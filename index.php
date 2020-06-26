@@ -9,9 +9,7 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
 </head>
 <body>
 <div id="wrapper">
-<header>
     <?php print_header() ?>
-</header>
 </body>
 <section class="content_wrapper">
     <h1 class="title"> Bienvenue sur L'imprimeur</h1>
@@ -27,8 +25,6 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
         Pour plus d'information je vous conseille d'aller voir les différentes parties que je vous propose ci-dessous.
     </p>
 </section>
-<footer>
     <?php print_footer(); ?>
-</footer>
 </div
 </html>
