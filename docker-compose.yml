@@ -16,7 +16,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - '81:80'
+      - '8181:80'
     volumes:
       - './docker/nginx/conf.d:/etc/nginx/conf.d:ro'
       - '.:/srv/app/'
