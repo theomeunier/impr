@@ -23,3 +23,7 @@ composer install
 ```
 npm run process-styles
 ```
+
+### Déploiement 
+
+- Adresse de production : http://88.198.243.216/
