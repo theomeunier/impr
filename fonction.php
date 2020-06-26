@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "variables.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/variables.php";
 
 function str_random($length){
     $alphabet="0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
