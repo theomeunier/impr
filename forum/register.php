@@ -1,12 +1,6 @@
-<?php include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php"; ?>
-<?php include "{$_SERVER['DOCUMENT_ROOT']}/forum/fonction.php" ?>
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<?php print_head() ?>
-<body>
-<?php print_header() ?>
-<div id="wrapper">
-<section class="content_wrapper">
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php"; ?>
+
+<?php ob_start(); ?>
 
     <h1> S'inscrire</h1>
 
@@ -98,9 +92,7 @@
         }
     }
 
+    $content = ob_get_clean();
+    include '../template.php';
+
     ?>
-</section>
-<?php print_footer() ?>
-</div>
-</body>
-</html>
