@@ -1,5 +1,6 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "variables.php";
 
 function str_random($length){
     $alphabet="0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
@@ -17,21 +18,21 @@ function str_random($length){
 function sendMail($subject, array $from, array $to, $body)
 {
     // Create the Transport
-    $transport = (new Swift_SmtpTransport('smtp.example.org', 25))
-        ->setUsername('your username')
-        ->setPassword('your password')
+    $transport = (new Swift_SmtpTransport(MAILER_HOST, MAILER_PORT ))
+        ->setUsername(MAILER_USERNAME)
+        ->setPassword(MAILER_PASSWORD)
     ;
 
-// Create the Mailer using your created Transport
+    // Create the Mailer using your created Transport
     $mailer = new Swift_Mailer($transport);
 
-// Create a message
+    // Create a message
     $message = (new Swift_Message($subject))
         ->setFrom($from)
         ->setTo($to)
         ->setBody($body)
     ;
 
-// Send the message
+    // Send the message
     return $mailer->send($message);
 }
