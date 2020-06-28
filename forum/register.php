@@ -94,13 +94,18 @@ confirmation_token = ?');
             debug($token);
             $req-> execute([$_POST ['username'], $password, $_POST['email'], $token ]);
             $user_id = $pdo->lastInsertId();
-            mail ($_POST['email'], 'confirmation de votre compte', "Afin de valider votre compte merci de cliquer sur ce liens\n\nhttp://88.198.243.216/forum/confirme.php?id=$user_id&token=$token");
+            require_once '/path/to/vendor/autoload.php';
+            sendMail(
+                "confirmation de votre compte",
+                ["noryply@limprimeur.com" => "L'imprimeur"],
+                [$_POST['email']],
+                "Afin de valider votre compte merci de cliquer sur ce liens\n\nhttp://88.198.243.216/forum/confirme.php?id=$user_id&token=$token"
+            );
             header('location: login.php');
             exit();
         }
        var_dump($errors);
     }
-
     ?>
 </section>
 <footer>
