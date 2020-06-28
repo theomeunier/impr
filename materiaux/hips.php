@@ -1,19 +1,7 @@
 <?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
+ob_start();
 ?>
 
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/materiaux/css/hips.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section class="hips">
     <div class="div-menu-hips-1">
         <h1 class="titre-hips"> HIPS </h1>
         <p>Le PVA(PolyVinyl Alcohol) et le HIPS ce sont de filament pour faire des support qui parte avec l'eau.</p>
@@ -36,9 +24,11 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             d'impression, l'HIPS est de couleur blanche.
         <p><img class="image-pre-hips" src="img/support-hips.jpg" alt="imprimanteFDM"></p>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
+
+<?php
+    $content = ob_get_clean();
+    include '../template.php'
+?>
+
+<!-- je passe a l'autre dossier ?-->
+

@@ -1,19 +1,5 @@
-<?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
-?>
+<?php ob_start(); ?>
 
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/materiaux/css/abs.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section class="abs">
     <div class="div-menu-abs-1">
         <h1 class="titre-abs"> ABS </h1>
         <p> L'ABS (acrylonitrile butadiène styrène) fonctionne commme le PLA mais il a pas le même usage, ils et plus
@@ -44,10 +30,8 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             l'impression c'est que c'est coutable.
         <p><img class="image-pre-ab" src="img/ABS.jpg" alt="imprimanteFDM"></p>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
+<?php
+$content = ob_get_clean();
+include '../template.php'
+?>
 

@@ -1,19 +1,5 @@
-<?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
+<?php ob_start();
 ?>
-
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/materiaux/css/resines.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section class="resines">
     <div class="div-menu-resines">
         <h2 class="sous-titre-resines-1"> les resines </h2>
     </div>
@@ -45,10 +31,7 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             l'usage reste le même.
         <p><img class="image-pre-resines" src="img/PLA.jpg" alt="imprimanteFDM"></p>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
-
+<?php
+$content = ob_get_clean();
+include '../template.php';
+?>

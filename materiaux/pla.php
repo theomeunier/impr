@@ -1,19 +1,5 @@
-<?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
-?>
+<?php ob_start(); ?>
 
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/materiaux/css/pla.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section class="plastique">
     <div class="div-menu-plastique-1">
         <h1 class="titre-plastique"> PLA </h1>
         <p>Le PLA ( Acide Polylactique ) est le plastique le plus utiliser et fabriquer par plusieurs fabriquands </p>
@@ -51,10 +37,8 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             ma par, attention tout le monde ne demande pas les même type t'éxigance..
         <p><img class="image-pre-FDM" src="img/PLA.jpg" alt="imprimanteFDM"></p>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
 
+<?php
+$content = ob_get_clean();
+include '../template.php';
+?>
