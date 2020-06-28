@@ -1,19 +1,6 @@
 <?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
+ob_start();
 ?>
-
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/imprimante/css/fdm.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section class="FDM">
     <div class="div-menu-FDM-1">
         <h1 class="titre-FDM"> FDM </h1>
         <p>FDM= Fused deposition modeling (modelage par dépôt de matière en fusion) est l'imprimante la plus utiliser.
@@ -95,13 +82,9 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             </tr>
         </table>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
-
+<?php 
+    $content = ob_get_clean();
+    include '../template.php'; ?>
 
 
 
