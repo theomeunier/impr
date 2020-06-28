@@ -1,19 +1,5 @@
-<?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
-?>
+<?php ob_start(); ?>
 
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/imprimante/css/sla.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section class="SLA">
     <div class="div-menu-SLA-1">
         <h1 class="titre-SLA"> SLA </h1>
         <p> Stereolithographie ou SlA= ( Stereolithography Apparatus ) c'est la deuxième impriamte la plus utiliser sur
@@ -69,9 +55,7 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             </tr>
         </table>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
+<?php
+$content = ob_get_clean();
+include '../template.php';
+?>

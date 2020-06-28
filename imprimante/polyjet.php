@@ -1,19 +1,7 @@
 <?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
+ob_start();
 ?>
 
-    <!DOCTYPE html>
-    <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>L'imprimeur</title>
-        <link rel="stylesheet" type="text/css" href="/imprimante/css/polyjet.css"/>
-        <?php print_head() ?>
-    </head>
-    <body>
-    <header>
-        <?php print_header() ?>
-    </header>
-    <section class="polyget">
         <div class="div-menu-polyget-1">
             <h1 class="titre-polyget"> Polyjet </h1>
             <p class="text-FDM"> Le polyjet est une imprimante utiliser surtout utilisé par les entreprises car le prix
@@ -53,10 +41,7 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
                 faut faire un devis avec le fabricant en personne et je pense que pour votre usage (pour particulier) ce
                 type d'imprimante vous ne servirez pas. </p>
         </div>
-    </section>
-    <footer>
-        <?php print_footer() ?>
-    </footer>
-    </body>
-    </html>
-
+<?php
+$content = ob_get_clean();
+include '../template.php';
+?>

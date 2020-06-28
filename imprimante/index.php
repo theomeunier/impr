@@ -1,19 +1,6 @@
 <?php
-include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
+ob_start();
 ?>
-
-<!DOCTYPE html>
-<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>L'imprimeur</title>
-    <link rel="stylesheet" type="text/css" href="/imprimante/css/imprimante.css"/>
-    <?php print_head() ?>
-</head>
-<body>
-<header>
-    <?php print_header() ?>
-</header>
-<section>
     <div class="block-home" id="block-fdm">
         <div class="home">
         <div class="home-element">
@@ -50,9 +37,8 @@ include "{$_SERVER['DOCUMENT_ROOT']}/methods/display.php";
             <img class="home_img" src="img/polyjet.jpg" alt="impriamnte FDM">
         </div>
     </div>
-</section>
-<footer>
-    <?php print_footer() ?>
-</footer>
-</body>
-</html>
+<?php
+$content = ob_get_clean();
+include '../template.php';
+?>
+

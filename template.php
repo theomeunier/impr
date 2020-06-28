@@ -5,6 +5,7 @@
     <title>L'imprimeur</title>
     <meta name="dsicription" content="l'impression 3D et son fonctionnement, tout connaitre sur le sujets et appronfondir ces connaissances " >
     <link rel="stylesheet" type="text/css" href="/css/style.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/impri.min.css"/>
     <link rel="icon"  href ="image/png/logo_isox3.png"/>
 </head>
 <body>
@@ -16,10 +17,10 @@
             <nav class="nav-menu">
                 <ul>
                     <li class="menu-acc">
-                        <img class="image-menu" src="/image/logoacc.png" alt="logo acceuil" onclick="window.location='index.php'" />
+                        <img class="image-menu" src="/image/logoacc.png" alt="logo acceuil" onclick="window.location='/index.php'" />
                     </li>
                     <li>
-                        <a href="/imprimante">Les imprimantes 3D</a>
+                        <a href="/imprimante/index.php">Les imprimantes 3D</a>
                         <ul class="unroll">
                             <li><a href="/imprimante/fdm.php">FDM</a></li>
                             <li><a href="/imprimante/sla.php">SLA</a></li>
@@ -27,7 +28,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/materiaux">Les matériaux</a>
+                        <a href="/materiaux/index.php">Les matériaux</a>
                         <ul class="unroll">
                             <li><a href="/materiaux/pla.php">PLA</a></li>
                             <li><a href="/materiaux/abs.php">ABS</a></li>
@@ -35,8 +36,8 @@
                             <li><a href="/materiaux/resines.php">les resines</a></li>
                         </ul>
                     </li>
-                    <li><a href="/stl">STL</a></li>
-                    <li><a href="/index.php">forum</a></li>
+                    <li><a href="/stl/index.php">STL</a></li>
+                    <li><a href="index.php">forum</a></li>
                 </ul>
             </nav>
         </header>
