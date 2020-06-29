@@ -37,7 +37,16 @@ function sendMail($subject, array $from, array $to, $body)
     return $mailer->send($message);
 }
 
-
+/**
+ * Obtient le lien de vérification.
+ * @param int $user_id
+ * @param string $token
+ * @return string
+ */
+function getLinkPageConfirmation($user_id, $token)
+{
+    return PAGE_CONFIRMATION . "?id=$user_id&token=$token";
+}
 
 /**
  * Vérifie si l'utilisateur est connecté.

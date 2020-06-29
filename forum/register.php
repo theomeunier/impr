@@ -81,11 +81,21 @@ if (!empty($_POST)) {
         $req->execute([$_POST ['username'], $password, $_POST['email'], $token]);
         $user_id = $pdo->lastInsertId();
 
+        $link = getLinkPageConfirmation($user_id, $token);
+        $message = <<<'EOF'
+Bonjour,
+
+Afin de valider votre compte merci de cliquer sur ce liens :
+{$link}
+
+L'équipe
+EOF;
+
         sendMail(
             "confirmation de votre compte",
             ["noryply@limprimeur.com" => "L'imprimeur"],
             [$_POST['email']],
-            "Afin de valider votre compte merci de cliquer sur ce liens\n\nhttp://localhost:8181/forum/confirme.php?id=$user_id&token=$token"
+            $message
         );
 
         header('location: /login.php');
