@@ -1,22 +1,22 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+
+session_abort();
+
 $user_id = $_GET['id'];
 $token = $_GET['token'];
 
-require 'db.php';
-$req = $pdo -> prepare('SELECT confirmation_token FROM users WHERE id = ?');
+$req = $pdo -> prepare('SELECT confirmation_token FROM user WHERE id = ?');
 $req->execute([$user_id]);
 $user = $req-> fetch();
 
-var_dump($user);
-
-if ($user && $user -> confirmation_token == $token){
-    session_start();
-     $req = $pdo->prepare('UPDATE users SET confirmation_token = NULL , confirmed_at = NOW() WHERE id = ?');
+if ($user && $user->confirmation_token == $token) {
+     $req = $pdo->prepare('UPDATE user SET confirmation_token = NULL,  confirmation_at = NOW() WHERE id = ?');
      $req ->execute([$user_id]);
      $_SESSION['auth'] = $user;
-    header('location : account.php');
-    die('ok');
-}
-else{
-    die('pas ok');
+
+     header("Location: ../forum/account.php");
+} else {
+    $_SESSION['flash']['danger']=" Ce toker n'est plus valide";
+    header('Location: forum/login.php');
 }
