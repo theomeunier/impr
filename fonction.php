@@ -8,7 +8,7 @@ function str_random($length){
 }
 
 /**
- * Envoie d'email via un serveu SMTP
+ * Envoie d'email via un serveu SMTP.
  * @param string $subject
  * @param array $from
  * @param array $to
