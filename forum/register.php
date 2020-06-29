@@ -1,6 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php"; ?>
+<?php
+    include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
-<?php ob_start(); ?>
+    ob_start();
+?>
 
 <h1> S'inscrire</h1>
 
@@ -41,8 +44,6 @@
 // exigence pour champs demandées
 if (!empty($_POST)) {
     $errors = array();
-    include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
-
 
     if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
         $errors['username'] = "Votre pseudo n'est pas valide (alphanumérique)";
