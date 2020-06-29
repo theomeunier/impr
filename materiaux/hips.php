@@ -1,7 +1,6 @@
 <?php
 ob_start();
 ?>
-
     <div class="div-menu-hips-1">
         <h1 class="titre-hips"> HIPS </h1>
         <p>Le PVA(PolyVinyl Alcohol) et le HIPS ce sont de filament pour faire des support qui parte avec l'eau.</p>
@@ -24,11 +23,9 @@ ob_start();
             d'impression, l'HIPS est de couleur blanche.
         <p><img class="image-pre-hips" src="img/support-hips.jpg" alt="imprimanteFDM"></p>
     </div>
-
 <?php
     $content = ob_get_clean();
     include '../template.php'
 ?>
 
-<!-- je passe a l'autre dossier ?-->
 
