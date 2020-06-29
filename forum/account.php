@@ -1,7 +1,15 @@
 <?php
-//die("account");
-include "{$_SERVER['DOCUMENT_ROOT']}/forum/fonction.php";
-ob_start();
+    include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
+
+    $userConnected = checkUserConnected();
+
+    if (!$userConnected) {
+        $_SESSION['flash']['danger'] = "Erreur de connrxion";
+
+        header('Location: ../index.php');
+    }
+
+    ob_start();
 ?>
 
 <h1>Votre compte </h1>

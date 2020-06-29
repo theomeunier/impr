@@ -36,3 +36,13 @@ function sendMail($subject, array $from, array $to, $body)
     // Send the message
     return $mailer->send($message);
 }
+
+
+
+/**
+ * Vérifie si l'utilisateur est connecté.
+ */
+function checkUserConnected()
+{
+    return !empty($_SESSION['auth']) ?  false :  true;
+}
