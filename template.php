@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                     <li><a href="/stl/index.php">STL</a></li>
-                    <li><a href="index.php">forum</a></li>
+                    <li><a href="/forum">forum</a></li>
                 </ul>
             </nav>
         </header>
