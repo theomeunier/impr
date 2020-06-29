@@ -37,7 +37,7 @@ docker-compose stop
 - construire les services : 
 ```
 docker-compose up --build -d
-```
+``` 
 
 ### Déploiement 
 
