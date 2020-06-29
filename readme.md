@@ -24,6 +24,21 @@ composer install
 npm run process-styles
 ```
 
+- lancer docker :
+```
+docker-compose start
+```
+
+- arrêter docker :
+```
+docker-compose stop
+```
+
+- construire les services : 
+```
+docker-compose up --build -d
+```
+
 ### Déploiement 
 
 - Adresse de production : http://88.198.243.216/
