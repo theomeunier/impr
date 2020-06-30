@@ -6,7 +6,7 @@ ob_start();
 
 <h1> S'inscrire</h1>
 
-<?php if (!empty($errors)): ?> // message de vigilance
+<?php if (!empty($errors)): ?>
     <div class="alert alert-danger"><
         <p>Vous n'avez pas rempli le formulaire correctement</p>
         <ul>
