@@ -11,5 +11,5 @@
     const DB_USERNAME = "mysql";
     const DB_PASSWORD = "mysql";
 
-    const HOST = "http://localhot:8181/";
-    const PAGE_CONFIRMATION = HOST . "form/confirme.php";
+    const HOST = "http://localhost:8181/";
+    const PAGE_CONFIRMATION = HOST . "forum/confirme.php";

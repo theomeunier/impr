@@ -1,8 +1,8 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
-    ob_start();
+ob_start();
 ?>
 
 <h1> S'inscrire</h1>
@@ -72,7 +72,6 @@ if (!empty($_POST)) {
         $errors['password'] = "vous devez rentrer un mot de passe valise ";
     }
 
-    // conexion à la machine
     if (empty($errors)) {
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // chiffrement du mot de passe
         $token = str_random(60);
@@ -82,14 +81,13 @@ if (!empty($_POST)) {
         $user_id = $pdo->lastInsertId();
 
         $link = getLinkPageConfirmation($user_id, $token);
-        $message = <<<'EOF'
+        $message = <<<EOT
 Bonjour,
 
-Afin de valider votre compte merci de cliquer sur ce liens :
-{$link}
+Afin de valider votre compte merci de cliquer sur ce liens : $link
 
 L'équipe
-EOF;
+EOT;
 
         sendMail(
             "confirmation de votre compte",
@@ -97,8 +95,8 @@ EOF;
             [$_POST['email']],
             $message
         );
-
-        header('location: /login.php');
+        $_SESSION['flash']['sucesse'] = "Un email de confirmation vous a été envoyé pour validé votre compte ";
+        header('Location: /forum/login.php');
     }
 }
 

@@ -4,7 +4,7 @@
     $userConnected = checkUserConnected();
 
     if (!$userConnected) {
-        $_SESSION['flash']['danger'] = "Erreur de connrxion";
+        $_SESSION['flash']['danger'] = "Erreur de connexion";
 
         header('Location: ../index.php');
     }
