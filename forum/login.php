@@ -19,6 +19,8 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) 
         $errors['password'] = 'Mauvais mot de passe';
     }
 
+    $_SESSION['auth'] = $user;
+
     header('Location: /forum/account.php');
 }
 ?>
