@@ -82,14 +82,13 @@ if (!empty($_POST)) {
         $user_id = $pdo->lastInsertId();
 
         $link = getLinkPageConfirmation($user_id, $token);
-        $message = <<<'EOF'
+        $message = <<<EOT
 Bonjour,
 
-Afin de valider votre compte merci de cliquer sur ce liens :
-{$link}
+Afin de valider votre compte merci de cliquer sur ce liens : $link.
 
 L'équipe
-EOF;
+EOT;
 
         sendMail(
             "confirmation de votre compte",
