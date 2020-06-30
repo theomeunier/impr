@@ -1,6 +1,11 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+
+if (!checkUserConnected()) {
+    header('Location: /forum/account.php');
+}
+
 ob_start();
 
 if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) {
