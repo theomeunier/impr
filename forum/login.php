@@ -8,6 +8,8 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])){
     $req = $pdo -> prepare('SELECT * FROM users WHERE usermane = :username OR email = :useranme');
     $req -> execute(['username ' => $_POST['username']]);
     $user = $req->fetch();
+    var_dump(password_verify($_POST['password'], PASSWORD_BCRYPT));
+    var_dump($user);
 }
 ?>
 
@@ -23,7 +25,6 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])){
     </div>
     <button type="submit" class="btn btn-primary">Se connecter</button>
 </form>
-<p>page login</p>
 
 <?php
 $content = ob_get_clean();

@@ -54,7 +54,7 @@ if (isset($_SESSION['flash'])) : ?>
                     </ul>
                 </li>
                 <li><a href="/stl/index.php">STL</a></li>
-                <li><a href="/forum">forum</a></li>
+                <li><a href="/maintenance.php">forum</a></li>
             </ul>
         </nav>
     </header>
