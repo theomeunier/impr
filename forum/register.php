@@ -85,7 +85,7 @@ if (!empty($_POST)) {
         $message = <<<EOT
 Bonjour,
 
-Afin de valider votre compte merci de cliquer sur ce liens : $link.
+Afin de valider votre compte merci de cliquer sur ce liens : $link
 
 L'équipe
 EOT;
