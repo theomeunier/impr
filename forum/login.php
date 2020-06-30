@@ -4,15 +4,39 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 ob_start();
 
 if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) {
+    $errors = [];
+
     $req = $pdo->prepare('SELECT * FROM users WHERE usermane = :username OR email = :useranme');
     $req->execute(['username ' => $_POST['username']]);
     $user = $req->fetch();
-    var_dump(password_verify($_POST['password'], PASSWORD_BCRYPT));
-    var_dump($user);
+
+    if(empty($user)) {
+        $errors['username'] = 'Mauvais pseudo ou email';
+    }
+
+    $checkPassword = password_verify($_POST['password'], PASSWORD_BCRYPT);
+    if($checkPassword) {
+        $errors['password'] = 'Mauvais mot de passe';
+    }
+
+    header('Location: /forum/account.php');
 }
 ?>
 
 <h1>Se connnecter</h1>
+
+<?php if (!empty($errors)): ?> // message de vigilance
+    <div class="alert alert-danger"><
+        <ul>
+            <?php foreach ($errors as $error): ?>
+                <li>
+                    <?php echo $error; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
 <form action="#" method="POST">
     <div class="forum-group">
         <label for="username">Pseudo ou email</label>
