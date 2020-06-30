@@ -1,15 +1,32 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+
+if (!checkUserConnected()) {
+    header('Location: /forum/account.php');
+}
+
 ob_start();
-?>
-<?php
-if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])){
+
+if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) {
+    $errors = [];
+
     $req = $pdo->prepare('SELECT * FROM users WHERE usermane = :username OR email = :useranme');
-    $req -> execute(['username '=>$_POST['username']]);
+    $req->execute(['username ' => $_POST['username']]);
     $user = $req->fetch();
-    var_dump(password_verify($_POST['password'], PASSWORD_BCRYPT));
-    var_dump($user);
+
+    if(empty($user)) {
+        $errors['username'] = 'Mauvais pseudo ou email';
+    }
+
+    $checkPassword = password_verify($_POST['password'], PASSWORD_BCRYPT);
+    if($checkPassword) {
+        $errors['password'] = 'Mauvais mot de passe';
+    }
+
+    $_SESSION['auth'] = $user;
+
+    header('Location: /forum/account.php');
 }
 ?>
 
@@ -29,6 +46,4 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])){
 <?php
 $content = ob_get_clean();
 include '../template.php';
-?>
-
 
