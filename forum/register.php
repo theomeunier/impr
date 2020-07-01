@@ -6,7 +6,7 @@ ob_start();
 
 <h1> S'inscrire</h1>
 
-<?php if (!empty($errors)): ?>
+<?php if(!empty($errors)): ?>
     <div class="alert alert-danger"><
         <p>Vous n'avez pas rempli le formulaire correctement</p>
         <ul>
@@ -16,6 +16,16 @@ ob_start();
                 </li>
             <?php endforeach; ?>
         </ul>
+    </div>
+<?php endif; ?>
+
+<?php if(!empty($success)): ?>
+    <div class="alert alert-success">
+        <?php foreach ($success as $msg): ?>
+            <li>
+                <?php echo $msg; ?>
+            </li>
+        <?php endforeach; ?>
     </div>
 <?php endif; ?>
 
@@ -36,7 +46,7 @@ ob_start();
         <label for="password_confirm">Confirmer votre mot de passe</label>
         <input type="password" id="password_confirm" name="password_confirm" class="form-control"/>
     </div>
-    <button type="submit" class="btn btn-primary">M'inscrire</button>
+    <button type="submit" class="btn btn-primary mt-3">M'inscrire</button>
 </form>
 
 <?php
@@ -94,8 +104,9 @@ EOT;
             [$_POST['email']],
             $message
         );
-        $_SESSION['flash']['sucesse'] = "Un email de confirmation vous a été envoyé pour validé votre compte ";
-        header('Location: /forum/login.php');
+
+        $success = [];
+        $success["email"] = "Un email de confirmation vous a été envoyé pour valider votre compte";
     }
 }
 

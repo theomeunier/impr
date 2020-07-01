@@ -27,14 +27,18 @@ if (isset($_SESSION['flash'])) : ?>
     <link rel="icon" href="image/png/logo_isox3.png"/>
 </head>
 <body>
+<div>
+    <img class="image-header" src="/image/Logo_isox1.png" alt="logo site">
+</div>
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #58a1e5;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="/image/Logo_isox1.png" width="30" height="30" class="d-inline-block align-top" alt=""
-                     loading="lazy">
+                <img src="/image/logoacc.png" width="30" height="30" class="d-inline-block align-top" alt=""
+                     loading="lazy" onclick="window.location='/index.php'"/">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler mr-3" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -73,56 +77,24 @@ if (isset($_SESSION['flash'])) : ?>
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <?php if($_SESSION['auth']): ?>
+                    <?php if ($_SESSION['auth']): ?>
                         <div class="btn-group" role="group">
-                            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                username
+                            <button id="btnGroupUserConnected" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                Bonjour <?php echo $_SESSION['auth']->username; ?>
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                            <ul class="dropdown-menu" aria-labelledby="btnGroupUserConnected">
                                 <li><a class="dropdown-item" href="forum/account.php">Mon compte</a></li>
-                                <li><a class="dropdown-item" href="forum/logout.php">Se déconnecter</a></li>
+                                <li><a class="dropdown-item" href="forum/logout.php">Se déconnecté</a></li>
                             </ul>
                         </div>
                     <?php else: ?>
-                        <a href="forum/login.php" type="button" class="btn btn-primary">Se connecter</a>
+                        <a href="/forum/register.php" type="button" class="btn btn-primary mr-3">Crée un compte</a>
+                        <a href="/forum/login.php" type="button" class="btn btn-primary mr-3">Se connecter</a>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
     </nav>
-
-    <!-- <header>
-        <div>
-            <img class="image-header" src="/image/Logo_isox1.png" alt="logo site">
-        </div>
-        <nav class="nav-menu">
-            <ul>
-                <li class="menu-acc">
-                    <img class="image-menu" src="/image/logoacc.png" alt="logo acceuil"
-                         onclick="window.location='/index.php'"/>
-                </li>
-                <li>
-                    <a href="/imprimante/index.php">Les imprimantes 3D</a>
-                    <ul class="unroll">
-                        <li><a href="/imprimante/fdm.php">FDM</a></li>
-                        <li><a href="/imprimante/sla.php">SLA</a></li>
-                        <li><a href="/imprimante/polyjet.php">Polyjet</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/materiaux/index.php">Les matériaux</a>
-                    <ul class="unroll">
-                        <li><a href="/materiaux/pla.php">PLA</a></li>
-                        <li><a href="/materiaux/abs.php">ABS</a></li>
-                        <li><a href="/materiaux/hips.php">HIPS</a></li>
-                        <li><a href="/materiaux/resines.php">les resines</a></li>
-                    </ul>
-                </li>
-                <li><a href="/stl/index.php">STL</a></li>
-                <li><a href="/maintenance.php">forum</a></li>
-            </ul>
-        </nav>
-    </header> -->
     <section class="content_wrapper">
         <?php echo $content; ?>
     </section>
