@@ -89,19 +89,19 @@ EOT;
 <?php endif; ?>
 
 <form action="#" method="POST">
-    <div class="forum-group">
+    <div class="mb-3">
         <label for="username">Pseudo</label>
         <input type="text" id="username" name="username" class="form-control"/>
     </div>
-    <div class="forum-group">
+    <div class="mb-3">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" class="form-control"/>
     </div>
-    <div class="forum-group">
+    <div class="mb-3">
         <label for="password">mot de passe</label>
         <input type="password" id="password" name="password" class="form-control"/>
     </div>
-    <div class="forum-group">
+    <div class="mb-3">
         <label for="password_confirm">Confirmer votre mot de passe</label>
         <input type="password" id="password_confirm" name="password_confirm" class="form-control"/>
     </div>

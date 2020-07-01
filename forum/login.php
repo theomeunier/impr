@@ -47,11 +47,11 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) 
 <?php endif; ?>
 
 <form action="#" method="POST">
-    <div class="forum-group">
+    <div class="mb-3">
         <label for="username">Pseudo ou email</label>
         <input type="text" id="username" name="username" class="form-control"/>
     </div>
-    <div class="forum-group">
+    <div class="mb-3">
         <label for="password">mot de passe</label>
         <input type="password" id="password" name="password" class="form-control"/>
     </div>
