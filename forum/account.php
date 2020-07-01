@@ -1,27 +1,18 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 
-    $userConnected = checkUserConnected();
+if (checkUserConnected()) {
+    header('Location: ../index.php');
+}
 
-    if (!$userConnected) {
-        $_SESSION['flash']['danger'] = "Erreur de connexion";
-        header('Location: ../index.php');
-    }
-
-    ob_start();
+ob_start();
 ?>
 
-<h1>Votre compte </h1>
-<p> votre compte a bien bien étais crée et verifier</p>
-
+<h1>Votre compte</h1>
+<p>
+    <?php dump($_SESSION['auth']); ?>
+</p>
 
 <?php
 $content = ob_get_clean();
 include '../template.php';
-?>
-
-
-
-
-
-

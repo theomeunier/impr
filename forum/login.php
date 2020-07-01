@@ -1,6 +1,5 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 if (!checkUserConnected()) {
     header('Location: /forum/account.php');
@@ -24,9 +23,10 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) 
         $errors['password'] = 'Mauvais mot de passe';
     }
 
-    if (empty($errors)) {
+    if(empty($errors)) {
         session_start();
         $_SESSION['auth'] = $user;
+
         header('Location: /forum/account.php');
     }
 }
