@@ -2,54 +2,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 ob_start();
-?>
 
-<h1> S'inscrire</h1>
-
-<?php if(!empty($errors)): ?>
-    <div class="alert alert-danger"><
-        <p>Vous n'avez pas rempli le formulaire correctement</p>
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li>
-                    <?php echo $error; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>
-
-<?php if(!empty($success)): ?>
-    <div class="alert alert-success">
-        <?php foreach ($success as $msg): ?>
-            <li>
-                <?php echo $msg; ?>
-            </li>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
-
-<form action="#" method="POST">
-    <div class="forum-group">
-        <label for="username">Pseudo</label>
-        <input type="text" id="username" name="username" class="form-control"/>
-    </div>
-    <div class="forum-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" class="form-control"/>
-    </div>
-    <div class="forum-group">
-        <label for="password">mot de passe</label>
-        <input type="password" id="password" name="password" class="form-control"/>
-    </div>
-    <div class="forum-group">
-        <label for="password_confirm">Confirmer votre mot de passe</label>
-        <input type="password" id="password_confirm" name="password_confirm" class="form-control"/>
-    </div>
-    <button type="submit" class="btn btn-primary mt-3">M'inscrire</button>
-</form>
-
-<?php
 // exigence pour champs demandées
 if (!empty($_POST)) {
     $errors = array();
@@ -62,7 +15,7 @@ if (!empty($_POST)) {
         $user = $req->fetch();
 
         if ($user) {
-            $errors['username'] = 'Ce speudo est déjà pris';
+            $errors['username'] = "Ce speudo est déjà pris";
         }
     }
 
@@ -105,10 +58,53 @@ EOT;
             $message
         );
 
-        $success = [];
-        $success["email"] = "Un email de confirmation vous a été envoyé pour valider votre compte";
+        $success = true;
     }
 }
+?>
+
+<h1> S'inscrire</h1>
+
+<?php if(!empty($errors)): ?>
+    <div class="alert alert-danger">
+        <p>Vous n'avez pas rempli le formulaire correctement</p>
+        <ul>
+            <?php foreach ($errors as $error): ?>
+                <li>
+                    <?php echo $error; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<?php if($success): ?>
+    <div class="alert alert-success">
+        Un email de confirmation vous a été envoyé pour valider votre compte
+    </div>
+<?php endif; ?>
+
+<form action="#" method="POST">
+    <div class="forum-group">
+        <label for="username">Pseudo</label>
+        <input type="text" id="username" name="username" class="form-control"/>
+    </div>
+    <div class="forum-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control"/>
+    </div>
+    <div class="forum-group">
+        <label for="password">mot de passe</label>
+        <input type="password" id="password" name="password" class="form-control"/>
+    </div>
+    <div class="forum-group">
+        <label for="password_confirm">Confirmer votre mot de passe</label>
+        <input type="password" id="password_confirm" name="password_confirm" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">M'inscrire</button>
+</form>
+
+<?php
 
 $content = ob_get_clean();
 include '../template.php';
