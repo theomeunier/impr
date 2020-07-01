@@ -1,18 +1,3 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-<?php
-if (isset($_SESSION['flash'])) : ?>
-    <?php foreach ($_SESSION['flash'] as $type => $message): ?>
-        <div class="alert alert-<?= $type ?>">
-            <?= $message; ?>
-        </div>
-    <?php endforeach; ?>
-    <?php unset($_SESSION ['flash']); ?>
-<?php endif; ?>
-
 <!DOCTYPE html>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -23,8 +8,7 @@ if (isset($_SESSION['flash'])) : ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
           integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/impri.min.css"/>
-    <link rel="icon" href="image/png/logo_isox3.png"/>
+    <link rel="icon" href="/image/png/logo_isox3.png"/>
 </head>
 <body>
 <div>
@@ -83,8 +67,8 @@ if (isset($_SESSION['flash'])) : ?>
                                 Bonjour <?php echo $_SESSION['auth']->username; ?>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="btnGroupUserConnected">
-                                <li><a class="dropdown-item" href="forum/account.php">Mon compte</a></li>
-                                <li><a class="dropdown-item" href="forum/logout.php">Se déconnecté</a></li>
+                                <li><a class="dropdown-item" href="/forum/account.php">Mon compte</a></li>
+                                <li><a class="dropdown-item" href="/forum/logout.php">Se déconnecté</a></li>
                             </ul>
                         </div>
                     <?php else: ?>
