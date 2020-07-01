@@ -1,6 +1,8 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 ob_start();
 ?>
+
 <div class="block-home">
     <div id="block-PLA">
         <div id="desc-PLA" class="block-desc1">
@@ -49,9 +51,7 @@ ob_start();
         </div>
     </div>
 </div>
-</div>
+
 <?php
 $content = ob_get_clean();
 include '../template.php';
-?>
-

@@ -1,6 +1,8 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 ob_start();
 ?>
+
 <div class="div-menu-FDM-1">
     <h1 class="titre-FDM"> FDM </h1>
     <p>FDM= Fused deposition modeling (modelage par dépôt de matière en fusion) est l'imprimante la plus utiliser.
@@ -82,15 +84,7 @@ ob_start();
         </tr>
     </table>
 </div>
+
 <?php
 $content = ob_get_clean();
 include '../template.php';
-?>
-
-
-
-
-
-
-
-

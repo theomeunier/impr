@@ -1,4 +1,7 @@
-<?php ob_start(); ?>
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
+ob_start();
+?>
 
 <h1 class="title"> Bienvenue sur L'imprimeur</h1>
 <p class="text">
@@ -14,6 +17,5 @@
 </p>
 
 <?php
-    $content = ob_get_clean();
-    include 'template.php';
-?>
+$content = ob_get_clean();
+include 'template.php';

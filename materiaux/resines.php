@@ -1,4 +1,6 @@
-<?php ob_start();
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
+ob_start();
 ?>
     <div class="div-menu-resines">
         <h2 class="sous-titre-resines-1"> les resines </h2>
@@ -31,7 +33,7 @@
             l'usage reste le même.
         <p><img class="image-pre-resines" src="img/PLA.jpg" alt="imprimanteFDM"></p>
     </div>
+
 <?php
 $content = ob_get_clean();
 include '../template.php';
-?>
