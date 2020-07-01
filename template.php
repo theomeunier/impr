@@ -11,10 +11,10 @@
     <link rel="icon" href="/image/png/logo_isox3.png"/>
 </head>
 <body>
-<div>
-    <img class="image-header" src="/image/Logo_isox1.png" alt="logo site">
-</div>
 <div class="container">
+    <div>
+        <img class="image-header" src="/image/Logo_isox1.png" alt="logo site">
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #58a1e5;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -68,7 +68,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="btnGroupUserConnected">
                                 <li><a class="dropdown-item" href="/forum/account.php">Mon compte</a></li>
-                                <li><a class="dropdown-item" href="/forum/logout.php">Se déconnecté</a></li>
+                                <li><a class="dropdown-item" href="/forum/logout.php">Se déconnecter</a></li>
                             </ul>
                         </div>
                     <?php else: ?>
