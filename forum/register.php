@@ -40,7 +40,7 @@ if (!empty($_POST)) {
 
     if (empty($errors)) {
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // chiffrement du mot de passe
-        $token = str_random(60);
+        $token = strRandom(60);
 
         $req = $pdo->prepare('INSERT INTO user SET username = ?, password = ?, email = ?, confirmation_token = ?');
         $req->execute([$_POST ['username'], $password, $_POST['email'], $token]);

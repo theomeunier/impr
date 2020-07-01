@@ -1,10 +1,17 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/variables.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
-function str_random($length){
-    $alphabet="0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
-     return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+function strRandom($length)
+{
+    $alphabet = "0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
+
+    return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
 }
 
 /**
@@ -53,5 +60,17 @@ function getLinkPageConfirmation($user_id, $token)
  */
 function checkUserConnected()
 {
-    return !empty($_SESSION['auth']) ?  false :  true;
+    session_start();
+
+    return empty($_SESSION['auth']);
+}
+
+/**
+ * Construit un lien
+ * @param $path
+ * @return string
+ */
+function getLink($path)
+{
+    return HOST . $path;
 }
