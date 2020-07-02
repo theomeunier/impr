@@ -50,22 +50,13 @@ if (!empty($_POST)) {
         $message = <<<EOT
 Bonjour,
 
-Afin de valider et confirmer votre compte merci de cliquer sur le bouton si-dessus :
-          <table class="table">
-              <tr>
-                  <td class=”button” bgcolor="#58A1E5">
-                      <button type="submit" class="btn btn-primary" href="<?php $link ?>" target="_blank">
-                          Clique ici            
-                      </button>
-                  </td>
-              </tr>
-          </table>
+Afin de valider et confirmer votre compte merci de cliquer sur le bouton si-dessus :$link
 L'équipe
 EOT;
 
         sendMail(
             "confirmation de votre compte",
-            ["noryply@limprimeur.com" => "L'imprimeur"],
+            ["noryply@limprimeur.com" => "mL'imprieur"],
             [$_POST['email']],
             $message
         );
