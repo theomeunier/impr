@@ -50,8 +50,16 @@ if (!empty($_POST)) {
         $message = <<<EOT
 Bonjour,
 
-Afin de valider votre compte merci de cliquer sur ce liens : $link
-
+Afin de valider et confirmer votre compte merci de cliquer sur le bouton si-dessus :
+          <table class="table">
+              <tr>
+                  <td class=”button” bgcolor="#58A1E5">
+                      <button type="submit" class="btn btn-primary" href="<?php $link ?>" target="_blank">
+                          Clique ici            
+                      </button>
+                  </td>
+              </tr>
+          </table>
 L'équipe
 EOT;
 
@@ -67,9 +75,9 @@ EOT;
 }
 ?>
 
-<h1> S'inscrire</h1>
+    <h1> S'inscrire</h1>
 
-<?php if(!empty($errors)): ?>
+<?php if (!empty($errors)): ?>
     <div class="alert alert-danger">
         <p>Vous n'avez pas rempli le formulaire correctement</p>
         <ul>
@@ -82,31 +90,31 @@ EOT;
     </div>
 <?php endif; ?>
 
-<?php if($success): ?>
+<?php if ($success): ?>
     <div class="alert alert-success">
         Un email de confirmation vous a été envoyé pour valider votre compte
     </div>
 <?php endif; ?>
 
-<form action="#" method="POST">
-    <div class="mb-3">
-        <label for="username">Pseudo</label>
-        <input type="text" id="username" name="username" class="form-control"/>
-    </div>
-    <div class="mb-3">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" class="form-control"/>
-    </div>
-    <div class="mb-3">
-        <label for="password">mot de passe</label>
-        <input type="password" id="password" name="password" class="form-control"/>
-    </div>
-    <div class="mb-3">
-        <label for="password_confirm">Confirmer votre mot de passe</label>
-        <input type="password" id="password_confirm" name="password_confirm" class="form-control"/>
-    </div>
-    <button type="submit" class="btn btn-primary mt-3">M'inscrire</button>
-</form>
+    <form action="#" method="POST">
+        <div class="mb-3">
+            <label for="username">Pseudo</label>
+            <input type="text" id="username" name="username" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label for="password">mot de passe</label>
+            <input type="password" id="password" name="password" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label for="password_confirm">Confirmer votre mot de passe</label>
+            <input type="password" id="password_confirm" name="password_confirm" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">M'inscrire</button>
+    </form>
 
 <?php
 
