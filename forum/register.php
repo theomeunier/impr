@@ -47,7 +47,7 @@ if (!empty($_POST)) {
         $user_id = $pdo->lastInsertId();
 
         $link = getLinkPageConfirmation($user_id, $token);
-        $message = <<<EOT
+        $txt = <<<EOT
 Bonjour,
 
 Afin de valider et confirmer votre compte merci de cliquer sur le bouton si-dessus :
@@ -67,7 +67,8 @@ EOT;
             "confirmation de votre compte",
             ["noryply@limprimeur.com" => "L'imprimeur"],
             [$_POST['email']],
-            $message
+            preg_replace('/< link >/', $link, file_get_contents("mail.html")),
+            $txt
         );
 
         $success = true;

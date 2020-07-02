@@ -19,10 +19,11 @@ function strRandom($length)
  * @param string $subject
  * @param array $from
  * @param array $to
- * @param string $body
+ * @param string $body contenu HTML
+ * @param string $txt contenu texte
  * @return int
  */
-function sendMail($subject, array $from, array $to, $body)
+function sendMail($subject, array $from, array $to, $body, $txt)
 {
     // Create the Transport
     $transport = (new Swift_SmtpTransport(MAILER_HOST, MAILER_PORT ))
@@ -37,7 +38,8 @@ function sendMail($subject, array $from, array $to, $body)
     $message = (new Swift_Message($subject))
         ->setFrom($from)
         ->setTo($to)
-        ->setBody($body)
+        ->setBody($body, 'text/html')
+        ->addPart($txt, 'text/plain')
     ;
 
     // Send the message
