@@ -56,7 +56,7 @@ EOT;
 
         sendMail(
             "confirmation de votre compte",
-            ["noryply@limprimeur.com" => "mL'imprieur"],
+            ["noryply@limprimeur.com" => "L'imprieur"],
             [$_POST['email']],
             preg_replace('/< link >/', $link, file_get_contents("mail.html")),
             $txt

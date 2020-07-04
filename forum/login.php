@@ -56,6 +56,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) 
         <input type="password" id="password" name="password" class="form-control"/>
     </div>
     <button type="submit" class="btn btn-primary mt-3">Se connecter</button>
+    <button type="submit" class="btn btn-primary mt-3" href="/forum/changepasseword.php">Mot de passe oublier</button>
 </form>
 
 <?php
