@@ -10,3 +10,6 @@
     const DB_HOST = "db:3306";
     const DB_USERNAME = "mysql";
     const DB_PASSWORD = "mysql";
+
+    const HOST = "http://localhost:8181/";
+    const PAGE_CONFIRMATION = HOST . "forum/confirme.php";

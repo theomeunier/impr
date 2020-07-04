@@ -36,7 +36,7 @@
                             <li><a href="/materiaux/resines.php">les resines</a></li>
                         </ul>
                     </li>
-                    <li><a href="/maintenance.php">STL</a></li>
+                    <li><a href="/stl/index.php">STL</a></li>
                     <li><a href="index.php">forum</a></li>
                 </ul>
             </nav>
@@ -51,6 +51,9 @@
                 <p><a href="/footer/condition.php">Conditions d'utilisation</a></p>
                 <p><a href="/footer/cookie.php">Politique des cookies</a></p>
                 <p><a href="/footer/conf.php">Politique de confidentialité</a></p>
+            </div>
+            <div class="footer_element">
+                <h3>Nous contacter</h3>
             </div>
             <div class="footer_element">
                 <h3>Description</h3>
