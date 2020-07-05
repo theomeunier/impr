@@ -9,15 +9,16 @@ ob_start();
 
 if (!empty($_POST) && !empty($_POST['email'])) {
     $errors = [];
-
+    var_dump($errors);
     $req = $pdo->prepare('SELECT * FROM user WHERE email = :email AND confirmation_at IS NOT NULL ');
-    $req->execute($_POST['email']);
+    $req->execute(['email' => $_POST['email']]);
     $user = $req->fetch();
+
 
     if ($user) {
         $reset_token = str_random(60);
         $pdo->prepare('UPDATE user SET reset_token = ?, reset_at = NOW() WHERE id = ?')->execute([$reset_token, $user->id]);
-        $errors['username'] = 'les instruction du rappel du mot de passe vous ont été envoyées par emails';
+        $seccess['username'] = 'les instruction du rappel du mot de passe vous ont été envoyées par email';
 
         $link = getLinkPageReset($user->id, $reset_token);
         $txt = <<<EOT
@@ -52,6 +53,11 @@ EOT;
                 </li>
             <?php endforeach; ?>
         </ul>
+    </div>
+<?php endif; ?>
+<?php if ($success): ?>
+    <div class="alert alert-success">
+        Un email de confirmation vous a été envoyé pour valider votre compte
     </div>
 <?php endif; ?>
 
