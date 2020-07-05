@@ -13,3 +13,4 @@
 
     const HOST = "http://localhost:8181/";
     const PAGE_CONFIRMATION = HOST . "forum/confirme.php";
+    const PAGE_RESET = HOST . "forum/reset.php";

@@ -46,17 +46,18 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) 
     </div>
 <?php endif; ?>
 
+
 <form action="#" method="POST">
     <div class="mb-3">
         <label for="username">Pseudo ou email</label>
         <input type="text" id="username" name="username" class="form-control"/>
     </div>
     <div class="mb-3">
-        <label for="password">mot de passe</label>
+        <label for="password">mot de passe </label>
         <input type="password" id="password" name="password" class="form-control"/>
     </div>
     <button type="submit" class="btn btn-primary mt-3">Se connecter</button>
-    <button type="submit" class="btn btn-primary mt-3" href="/forum/changepasseword.php">Mot de passe oublier</button>
+    <a type="button" class="btn btn-primary mt-3" href="/forum/changepasseword.php">Mot de passe oublier</a>
 </form>
 
 <?php
