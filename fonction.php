@@ -10,7 +10,6 @@ if (session_status() == PHP_SESSION_NONE) {
 function strRandom($length)
 {
     $alphabet = "0123456789azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN";
-
     return substr(str_shuffle(str_repeat($alphabet, $length)), 0, $length);
 }
 
@@ -26,10 +25,9 @@ function strRandom($length)
 function sendMail($subject, array $from, array $to, $body, $txt)
 {
     // Create the Transport
-    $transport = (new Swift_SmtpTransport(MAILER_HOST, MAILER_PORT ))
+    $transport = (new Swift_SmtpTransport(MAILER_HOST, MAILER_PORT))
         ->setUsername(MAILER_USERNAME)
-        ->setPassword(MAILER_PASSWORD)
-    ;
+        ->setPassword(MAILER_PASSWORD);
 
     // Create the Mailer using your created Transport
     $mailer = new Swift_Mailer($transport);
@@ -39,8 +37,7 @@ function sendMail($subject, array $from, array $to, $body, $txt)
         ->setFrom($from)
         ->setTo($to)
         ->setBody($body, 'text/html')
-        ->addPart($txt, 'text/plain')
-    ;
+        ->addPart($txt, 'text/plain');
 
     // Send the message
     return $mailer->send($message);
@@ -55,6 +52,10 @@ function sendMail($subject, array $from, array $to, $body, $txt)
 function getLinkPageConfirmation($user_id, $token)
 {
     return PAGE_CONFIRMATION . "?id=$user_id&token=$token";
+}
+function getLinkPageReset($user_id, $reset_token)
+{
+    return PAGE_RESET . "?id=$user_id&token=$reset_token";
 }
 
 /**
