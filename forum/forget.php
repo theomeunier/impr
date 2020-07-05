@@ -16,10 +16,9 @@ if (!empty($_POST) && !empty($_POST['email'])) {
 
 
     if ($user) {
-        $reset_token = str_random(60);
+        $reset_token = strRandom(60);
         $pdo->prepare('UPDATE user SET reset_token = ?, reset_at = NOW() WHERE id = ?')->execute([$reset_token, $user->id]);
-        $seccess['username'] = 'les instruction du rappel du mot de passe vous ont été envoyées par email';
-
+        $success['username'] = 'les instruction du rappel du mot de passe vous ont été envoyées par email';
         $link = getLinkPageReset($user->id, $reset_token);
         $txt = <<<EOT
 Bonjour,
@@ -42,7 +41,7 @@ EOT;
 }
 ?>
 
-    <h1>Se connecter</h1>
+    <h1>Changer de mot de passe</h1>
 
 <?php if (!empty($errors)): ?>
     <div class="alert alert-danger">
