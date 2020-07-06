@@ -78,11 +78,19 @@ function checkUserConnected()
 }
 
 /**
- * Construit un lien
- * @param $path
- * @return string
+ * Construit une session utilisateur.
+ * @param $user
  */
-function getLink($path)
+function setSessionUser($user)
 {
-    return HOST . $path;
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $_SESSION['auth'] = (object) [
+        'id' => $user->id,
+        'username' => $user->username,
+        'email' => $user->email,
+        'confirmation_at' => $user->confirmation_at,
+    ];
 }
