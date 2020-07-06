@@ -34,6 +34,7 @@ if (!empty($_POST)) {
             $errors['email'] = 'Ce mail est déjà utilisé par un autre utilisateur';
         }
     }
+
     if (empty($_POST ['password']) || $_POST['password'] != $_POST['password_confirm']) {
         $errors['password'] = "vous devez rentrer un mot de passe valise ";
     }

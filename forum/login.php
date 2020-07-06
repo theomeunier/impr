@@ -7,26 +7,29 @@ if (!checkUserConnected()) {
 
 ob_start();
 
-if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST ['password'])) {
+$username = $_POST['username'];
+$password = $_POST ['password'];
+
+if(!empty($_POST) && !empty($username) && !empty($password)) {
     $errors = [];
 
     $req = $pdo->prepare('SELECT * FROM user WHERE username = :username OR email = :username');
-    $req->execute(['username'=> $_POST['username']]);
+    $req->execute([
+        'username'=> $username,
+    ]);
     $user = $req->fetch();
 
     if(empty($user)) {
         $errors['username'] = 'Mauvais pseudo ou email';
     }
 
-    $checkPassword = password_verify($_POST['password'], $user->password);
+    $checkPassword = password_verify($password, $user->password);
     if(!$checkPassword) {
         $errors['password'] = 'Mauvais mot de passe';
     }
 
     if(empty($errors)) {
-        session_start();
-        $_SESSION['auth'] = $user;
-
+        setSessionUser($user);
         header('Location: /forum/account.php');
     }
 }

@@ -4,19 +4,26 @@ include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 if (checkUserConnected()) {
     header('Location: ../index.php');
 }
+
 ob_start();
 
 if (!empty($_POST)) {
+    $password = $_POST['password'];
+    $passwordConfirm = $_POST['password_confirm'];
 
-    if (!empty($_POST['password']) || $_POST['password'] && $_POST['password_confirm']){
+    if (!empty($password) || $password && $passwordConfirm){
         $errors ['password'] = "les mots de passes ne correspondent pas";
     } else {
-        $user_id = $_SESSION['auth']->id;
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $pdo->prepare('UPDATE user SET password = ? WHERE id = ?')->execute([$password, $user_id]);
+        $userId = $_SESSION['auth']->id;
+        $hashPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        $req = $pdo->prepare('UPDATE user SET password = :password WHERE id = :userId');
+        $req->execute([
+            'password' => $hashPassword,
+            'userId' => $userId,
+        ]);
 
         $success = true;
-
     }
 }
 
@@ -29,7 +36,6 @@ if (!empty($_POST)) {
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
-
 
     <h1>Votre compte</h1>
     <p class="font-weight-bold">
@@ -48,7 +54,6 @@ if (!empty($_POST)) {
         </div>
         <button class="btn btn-primary mt-3">Changer de mot de passe</button>
     </form>
-
 
 <?php
 unset($_SESSION["flash"]);
