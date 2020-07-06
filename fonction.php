@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/variables.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
-if (session_status() == PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
@@ -70,7 +70,9 @@ function getLinkPageReset($user_id, $reset_token)
  */
 function checkUserConnected()
 {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
     return empty($_SESSION['auth']);
 }
