@@ -29,4 +29,3 @@ unset($_SESSION["flash"]);
 
 $content = ob_get_clean();
 include 'template.php';
-?>
