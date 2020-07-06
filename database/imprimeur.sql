@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : sam. 04 juil. 2020 à 21:55
+-- Généré le : lun. 06 juil. 2020 à 18:07
 -- Version du serveur :  5.7.29
 -- Version de PHP : 7.4.1
 
@@ -34,7 +34,9 @@ CREATE TABLE `user` (
   `email` varchar(255) NOT NULL,
   `confirmation_token` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `confirmation_at` date DEFAULT NULL
+  `confirmation_at` date DEFAULT NULL,
+  `reset_token` varchar(255) DEFAULT NULL,
+  `reset_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
