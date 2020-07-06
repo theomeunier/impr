@@ -94,3 +94,17 @@ function setSessionUser($user)
         'confirmation_at' => $user->confirmation_at,
     ];
 }
+
+/**
+ * Construit un message de succès en session
+ * @param string $message
+ * @param string $type      type disponible : primary, secondary, success, danger, warning, info, dark, light
+ */
+function setSessionFlash($message, $type)
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $_SESSION['flash'][$type] = $message;
+}

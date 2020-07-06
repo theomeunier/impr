@@ -3,6 +3,14 @@ include $_SERVER['DOCUMENT_ROOT'] . "/fonction.php";
 ob_start();
 ?>
 
+<?php if(!empty($_SESSION["flash"])): ?>
+    <?php foreach($_SESSION["flash"] as $key => $value): ?>
+        <div class="alert alert-<?php echo $key; ?>">
+            <?php echo $value; ?>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+
 <h1 class="title"> Bienvenue sur L'imprimeur</h1>
 <p class="text">
     Ce site vous propose des aides sur le monde de la 3D<br><br>
@@ -17,6 +25,8 @@ ob_start();
 </p>
 
 <?php
+unset($_SESSION["flash"]);
+
 $content = ob_get_clean();
 include 'template.php';
 ?>

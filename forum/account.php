@@ -21,22 +21,13 @@ if (!empty($_POST)) {
 }
 
 ?>
-<?php if (!empty($errors)): ?>
-    <div class="alert alert-danger">
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li>
-                    <?php echo $error; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>
 
-<?php if ($success): ?>
-    <div class="alert alert-success">
-        Votre mot de passe viens d'être changer
-    </div>
+<?php if(!empty($_SESSION["flash"])): ?>
+    <?php foreach($_SESSION["flash"] as $key => $value): ?>
+        <div class="alert alert-<?php echo $key; ?>">
+            <?php echo $value; ?>
+        </div>
+    <?php endforeach; ?>
 <?php endif; ?>
 
 
@@ -60,5 +51,7 @@ if (!empty($_POST)) {
 
 
 <?php
+unset($_SESSION["flash"]);
+
 $content = ob_get_clean();
 include '../template.php';
