@@ -108,3 +108,19 @@ function setSessionFlash($message, $type)
 
     $_SESSION['flash'][$type] = $message;
 }
+
+/**
+ * Récupère une date française à partir d'une date anglaise (bdd)
+ * @param string $date
+ * @return string
+ */
+function getDateFr($date)
+{
+    try {
+        $date = new DateTime($date);
+    } catch (Exception $exception) {
+        dump($exception->getMessage());
+    }
+
+    return $date->format("d/m/Y");
+}

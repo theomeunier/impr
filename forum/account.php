@@ -42,7 +42,7 @@ if (!empty($_POST)) {
         speudo : <?php echo $_SESSION['auth']->username; ?><br>
         N° de compte: <?php echo $_SESSION['auth']->id; ?><br>
         Email : <?php echo $_SESSION['auth']->email; ?> <br>
-        Date de création du compte : <?php echo $_SESSION['auth']->confirmation_at; ?>
+        Date de création du compte : <?php echo getDateFr($_SESSION['auth']->confirmation_at); ?>
     </p>
     <form action="" method="post">
         <div class="form_group">
