@@ -53,6 +53,13 @@ function getLinkPageConfirmation($user_id, $token)
 {
     return PAGE_CONFIRMATION . "?id=$user_id&token=$token";
 }
+
+/**
+ * Obtient un lien de récupération de mot de passe.
+ * @param $user_id
+ * @param $reset_token
+ * @return string
+ */
 function getLinkPageReset($user_id, $reset_token)
 {
     return PAGE_RESET . "?id=$user_id&token=$reset_token";
